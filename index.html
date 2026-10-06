@@ -3,75 +3,588 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TRUE TRANS</title>
+
+  <title>TRUE TRANS — транспортные решения</title>
+
+  <meta
+    name="description"
+    content="TRUE TRANS — перегон, перевозка, эвакуация и решение нестандартных транспортных задач."
+  >
+
+  <meta name="theme-color" content="#0b0b0b">
+
+  <style>
+    :root {
+      --bg: #0b0b0b;
+      --surface: #121212;
+      --surface-2: #171717;
+      --text: #f3f0e8;
+      --muted: #aaa69d;
+      --gold: #c9ad72;
+      --gold-light: #dfc890;
+      --line: rgba(201, 173, 114, 0.24);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background:
+        radial-gradient(
+          circle at 50% 0%,
+          rgba(201, 173, 114, 0.11),
+          transparent 34%
+        ),
+        var(--bg);
+      color: var(--text);
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+      line-height: 1.6;
+    }
+
+    main {
+      width: min(100%, 760px);
+      margin: 0 auto;
+      padding: 24px 22px 50px;
+    }
+
+    section {
+      padding: 68px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    section:last-of-type {
+      border-bottom: none;
+    }
+
+    .brand {
+      color: var(--gold);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.30em;
+      text-transform: uppercase;
+      margin-bottom: 42px;
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.20em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(45px, 13vw, 84px);
+      line-height: 0.94;
+      letter-spacing: -0.055em;
+      font-weight: 500;
+    }
+
+    h1 span {
+      color: var(--gold);
+    }
+
+    h2 {
+      margin: 0 0 24px;
+      font-size: clamp(29px, 7.5vw, 50px);
+      line-height: 1.04;
+      letter-spacing: -0.035em;
+      font-weight: 500;
+    }
+
+    h3 {
+      margin: 0 0 7px;
+      font-size: 18px;
+      font-weight: 500;
+    }
+
+    p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .hero {
+      min-height: 91vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-top: 30px;
+    }
+
+    .hero h2 {
+      margin-top: 28px;
+      margin-bottom: 18px;
+    }
+
+    .hero h2 strong {
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    .hero-text {
+      max-width: 570px;
+    }
+
+    .services-line {
+      margin-top: 30px;
+      color: var(--text);
+      font-size: 13px;
+      line-height: 1.9;
+      letter-spacing: 0.035em;
+    }
+
+    .services-line span {
+      color: var(--gold);
+      margin: 0 5px;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 36px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 54px;
+      padding: 0 23px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 500;
+      cursor: pointer;
+      border: none;
+      font-family: inherit;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+
+    .button:active {
+      transform: scale(0.98);
+    }
+
+    .button-primary {
+      background: var(--gold);
+      color: #111;
+    }
+
+    .button-secondary {
+      border: 1px solid var(--line);
+      color: var(--text);
+      background: transparent;
+    }
+
+    .save-note {
+      margin-top: 15px;
+      font-size: 12px;
+      color: #77736c;
+    }
+
+    .situations {
+      display: grid;
+      gap: 1px;
+      margin-top: 34px;
+      background: var(--line);
+      border: 1px solid var(--line);
+    }
+
+    .situation {
+      background: var(--surface);
+      padding: 23px 20px;
+    }
+
+    .number {
+      color: var(--gold);
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      margin-bottom: 12px;
+    }
+
+    .situation p {
+      font-size: 14px;
+      line-height: 1.55;
+    }
+
+    .approach {
+      max-width: 620px;
+    }
+
+    .approach p {
+      margin-bottom: 20px;
+      font-size: 18px;
+      color: #c7c3ba;
+    }
+
+    .approach .final {
+      margin-top: 34px;
+      color: var(--text);
+      font-size: 25px;
+      line-height: 1.25;
+    }
+
+    .contacts {
+      display: grid;
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .contact {
+      display: block;
+      padding: 19px 20px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      color: var(--text);
+      text-decoration: none;
+      background: rgba(255,255,255,0.02);
+    }
+
+    .contact small {
+      display: block;
+      margin-bottom: 3px;
+      color: var(--gold);
+      font-size: 10px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .footer {
+      padding-top: 42px;
+      color: #5f5c56;
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      text-align: center;
+    }
+
+    .contact-message {
+      position: fixed;
+      left: 50%;
+      bottom: 24px;
+      transform: translate(-50%, 20px);
+      width: calc(100% - 36px);
+      max-width: 500px;
+      padding: 14px 18px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: #171717;
+      color: var(--text);
+      font-size: 14px;
+      text-align: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: 0.25s ease;
+      z-index: 10;
+    }
+
+    .contact-message.show {
+      opacity: 1;
+      transform: translate(-50%, 0);
+    }
+
+    @media (max-width: 520px) {
+      main {
+        padding-left: 18px;
+        padding-right: 18px;
+      }
+
+      section {
+        padding: 55px 0;
+      }
+
+      .hero {
+        min-height: 88vh;
+      }
+
+      .actions {
+        flex-direction: column;
+      }
+
+      .button {
+        width: 100%;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<h1>TRUE TRANS</h1>
+<main>
 
-<h2>Контакт, который стоит сохранить.</h2>
+  <!-- ГЛАВНЫЙ ЭКРАН -->
 
-<p>
-Есть задачи, которые невозможно решить в одиночку.
-</p>
+  <section class="hero">
 
-<p>
-Именно для таких ситуаций существует TRUE TRANS.
-</p>
+    <div class="brand">TRUE TRANS</div>
 
-<p>
-<strong>Ваше бремя — наше время.</strong>
-</p>
+    <div class="eyebrow">Транспортные решения</div>
 
-<hr>
+    <h1>
+      Сложная<br>
+      ситуация?<br>
+      <span>Спокойно.</span>
+    </h1>
 
-<h2>Когда может пригодиться TRUE TRANS</h2>
+    <h2>
+      <strong>Разберёмся.</strong>
+    </h2>
 
-<ul>
-<li>Неожиданно сломался автомобиль.</li>
-<li>Потребовалась эвакуация.</li>
-<li>Нужно перегнать автомобиль.</li>
-<li>Покупаете автомобиль в другом городе.</li>
-<li>Возникла нестандартная транспортная задача.</li>
-<li>Не знаете, с чего начать.</li>
-</ul>
+    <p class="hero-text">
+      Есть задачи, которые невозможно решить обычным способом.
+      Мы помогаем найти решение — от эвакуации автомобиля
+      до нестандартных транспортных задач.
+    </p>
 
-<hr>
+    <div class="services-line">
+      Эвакуация <span>·</span>
+      Перегон <span>·</span>
+      Перевозка <span>·</span>
+      Сопровождение
+    </div>
 
-<h2>Наш подход</h2>
+    <div class="actions">
 
-<p>
-Мы не обещаем невозможного.
-</p>
+      <a
+        class="button button-primary"
+        href="tel:+79649291606"
+      >
+        Позвонить
+      </a>
 
-<p>
-Мы берем на себя поиск решения.
-</p>
+      <button
+        class="button button-secondary"
+        type="button"
+        onclick="saveContact()"
+      >
+        Сохранить контакт
+      </button>
 
-<p>
-Если можем помочь — помогаем.
-</p>
+    </div>
 
-<p>
-Если решение находится у наших партнеров — подскажем проверенный путь.
-</p>
+    <p class="save-note">
+      Сохраните контакт сейчас — в нужный момент искать уже не придётся.
+    </p>
 
-<p>
-Главное — чтобы проблема перестала быть вашей.
-</p>
+  </section>
 
-<hr>
 
-<h2>Контакты</h2>
+  <!-- СИТУАЦИИ -->
 
-<p>
-Телефон: +7 964 929-16-06
-</p>
+  <section>
 
-<p>
-Email: truereligion39@gmail.com
-</p>
+    <div class="eyebrow">
+      Когда может понадобиться TRUE TRANS
+    </div>
+
+    <h2>
+      Не знаете,<br>
+      с чего начать?
+    </h2>
+
+    <div class="situations">
+
+      <div class="situation">
+        <div class="number">01</div>
+        <h3>Эвакуация</h3>
+        <p>
+          Автомобиль сломался, попал в аварию
+          или не может продолжить путь.
+        </p>
+      </div>
+
+      <div class="situation">
+        <div class="number">02</div>
+        <h3>Перегон автомобиля</h3>
+        <p>
+          Нужно забрать автомобиль
+          и доставить его в другой город.
+        </p>
+      </div>
+
+      <div class="situation">
+        <div class="number">03</div>
+        <h3>Перевозка</h3>
+        <p>
+          Автомобиль нужно перевезти,
+          а своим ходом ехать он не может или не должен.
+        </p>
+      </div>
+
+      <div class="situation">
+        <div class="number">04</div>
+        <h3>Сопровождение</h3>
+        <p>
+          Возникла транспортная задача,
+          для которой нет очевидного решения.
+        </p>
+      </div>
+
+      <div class="situation">
+        <div class="number">05</div>
+        <h3>Нестандартная ситуация</h3>
+        <p>
+          Не знаете, к кому обратиться?
+          Просто расскажите, что произошло.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ПОДХОД -->
+
+  <section>
+
+    <div class="eyebrow">Наш подход</div>
+
+    <h2>
+      Без лишнего шума.
+    </h2>
+
+    <div class="approach">
+
+      <p>
+        Мы не обещаем невозможного.
+      </p>
+
+      <p>
+        Мы берём на себя поиск решения.
+      </p>
+
+      <p>
+        Если можем помочь — помогаем.
+      </p>
+
+      <p>
+        Если решение находится у наших партнёров —
+        подскажем проверенный путь.
+      </p>
+
+      <p class="final">
+        Главное — чтобы проблема перестала быть вашей.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- КОНТАКТ -->
+
+  <section>
+
+    <div class="eyebrow">Контакт</div>
+
+    <h2>
+      Сохраните.<br>
+      Может пригодиться.
+    </h2>
+
+    <p>
+      Сейчас вам может ничего не требоваться.
+      Но когда возникнет транспортная проблема,
+      искать нужного человека уже будет некогда.
+    </p>
+
+    <div class="contacts">
+
+      <a
+        class="contact"
+        href="tel:+79649291606"
+      >
+        <small>Телефон</small>
+        +7 964 929-16-06
+      </a>
+
+      <a
+        class="contact"
+        href="mailto:truereligion39@gmail.com"
+      >
+        <small>Email</small>
+        truereligion39@gmail.com
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <div class="footer">
+    TRUE TRANS · транспортные решения
+  </div>
+
+</main>
+
+
+<div
+  id="contactMessage"
+  class="contact-message"
+>
+  Контакт подготовлен — выберите «Добавить контакт».
+</div>
+
+
+<script>
+
+function saveContact() {
+
+  const vcard =
+`BEGIN:VCARD
+VERSION:3.0
+FN:TRUE TRANS
+ORG:TRUE TRANS
+TEL;TYPE=CELL:+79649291606
+EMAIL:truereligion39@gmail.com
+NOTE:Перегон · Перевозка · Эвакуация · Сопровождение
+END:VCARD`;
+
+  const blob = new Blob(
+    [vcard],
+    { type: "text/vcard;charset=utf-8" }
+  );
+
+  const url = URL.createObjectURL(blob);
+
+  const link = document.createElement("a");
+
+  link.href = url;
+  link.download = "TRUE_TRANS.vcf";
+
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+
+  setTimeout(function() {
+    URL.revokeObjectURL(url);
+  }, 1000);
+
+  const message =
+    document.getElementById("contactMessage");
+
+  message.classList.add("show");
+
+  setTimeout(function() {
+    message.classList.remove("show");
+  }, 3500);
+}
+
+</script>
 
 </body>
 </html>
